@@ -6,27 +6,6 @@ public class Cat extends Animal {
     private final String name;
     private boolean isFull;
 
-    public void setFull(boolean full) {
-        isFull = full;
-    }
-
-    public boolean isFull() {
-        return isFull;
-    }
-
-    public int getAppetite() {
-        return appetite;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setAppetite(int appetite) {
-        this.appetite = appetite;
-    }
-
-
     public Cat() {   // Стандартный котик
         name = "Бездомный котик";
         appetite = 10;
@@ -59,14 +38,35 @@ public class Cat extends Animal {
             System.out.println(getName() + " не покушал.");
             System.out.println("Миска пуста");
             bowl.fillBowl();
-           // eat(bowl);
         }
     }
-
 
     @Override
     public void swim(int swimDistance) {
         System.out.println("Котик не умеет плавать");
     }
+
+
+    public void setFull(boolean full) {
+        isFull = full;
+    }
+
+    public boolean isFull() {
+        return isFull;
+    }
+
+    public int getAppetite() {
+        return appetite;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAppetite(int appetite) {
+        this.appetite = appetite;
+    }
+
+
 }
 

@@ -35,6 +35,38 @@ public class Bowl {
         isFull = true;
     }
 
+    public void eatFromBowl(int foodAppetite) {
+        if (foodAppetite > foodMas) {
+            System.out.println("В миске недостаточно еды");
+            setFull(false);
+        } else {
+            foodMas -= foodAppetite;
+        }
+    }
+
+    public boolean checkFoodFor(int foodAppetite) {
+        return foodAppetite <= foodMas;
+    }
+
+    // Заполняем миску
+    public void fillBowl() {
+        if (!isFull) {
+            setFull(true);
+            setFoodMas(getVolume());
+            System.out.println("Миска наполнена.");
+            info();
+        } else {
+            System.out.println("В миске нет места");
+        }
+    }
+
+
+    public void info() {
+        System.out.println("Количество еды в миске " +
+                +getFoodMas() + " Миска полная: " + isFull());
+    }
+
+
     public void setFoodMas(int foodMas) {
         this.foodMas = foodMas;
     }
@@ -56,35 +88,4 @@ public class Bowl {
         return volume;
     }
 
-    public void eatFromBowl (int foodAppetite){
-        if (foodAppetite > foodMas) {
-            System.out.println("В миске недостаточно еды");
-            setFull(false);
-        } else {
-            foodMas -= foodAppetite;
-        }
-    }
-
-    public boolean checkFoodFor (int foodAppetite){
-        return foodAppetite <= foodMas;
-    }
-
-    // Заполняем миску
-    public void fillBowl() {
-        if (!isFull) {
-                setFull(true);
-                setFoodMas(getVolume());
-                System.out.println("Миска наполнена.");
-                info();
-        } else {
-            System.out.println("В миске нет места");
-        }
-    }
-
-
-
-    public void info(){
-        System.out.println("Количество еды в миске "+
-                + getFoodMas() + " Миска полная: " + isFull());
-    }
 }
